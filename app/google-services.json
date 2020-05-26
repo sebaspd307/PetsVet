@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "238383775587",
+    "firebase_url": "https://petsvet-3e2cf.firebaseio.com",
+    "project_id": "petsvet-3e2cf",
+    "storage_bucket": "petsvet-3e2cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238383775587:android:82fc9866b5cfa166a21d56",
+        "android_client_info": {
+          "package_name": "co.com.petsvet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238383775587-bp2tep6qivi8d099ue619tnunc46remo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.com.petsvet",
+            "certificate_hash": "a7ebb54fb5ff5437ca1f6d43def74b5daa25523b"
+          }
+        },
+        {
+          "client_id": "238383775587-uoeb74vgt14a5bblutumsdgug6sv81p4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtJsMAyIDEcX85aKHA2dph8A3DkEL-r94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238383775587-uoeb74vgt14a5bblutumsdgug6sv81p4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
