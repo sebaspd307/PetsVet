@@ -1,5 +1,6 @@
 package co.com.petsvet
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,16 +21,16 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-        var button = buttonRegistro;
+        val button = buttonRegistro;
         button.setOnClickListener {
 
-            var usuarioId = UUID.randomUUID().toString()
-            var nomUsuario = txtTituloServicio.text.toString()
-            var contraseña = txtContrasenaRegistro.text.toString()
-            var correo = txtCorreoRegistro.textDirection.toString()
+            val usuarioId = UUID.randomUUID().toString()
+            val nomUsuario = txtUsuarioRegistro.text.toString()
+            val contraseña = txtContrasenaRegistro.text.toString()
+            val correo = txtCorreoRegistro.text.toString()
 
             if (nomUsuario == ""){
-                txtTituloServicio.error = "Campo Requerido";
+                txtUsuarioRegistro.error = "Campo Requerido";
             }
             if (contraseña == ""){
                 txtContrasenaRegistro.error = "Campo Requerido";
@@ -41,6 +42,8 @@ class RegistroActivity : AppCompatActivity() {
             db.collection("Usuarios").add(registro).addOnSuccessListener {
                 Log.d(TAG, "DocumentSnapshot added with ID: ${it.id}")
             }
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
             Toast.makeText(this,"Usuario Insertado",Toast.LENGTH_LONG).show();
         }
 

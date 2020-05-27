@@ -25,20 +25,21 @@ class ServiciosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_servicios)
 
 
-        var botonGuardar = buttonGuardarServicio;
-        var botonListar = buttonListarServicios;
-        var botonQr = buttonQR;
+        val botonGuardar = buttonGuardarServicio
+        val botonListar = buttonListarServicios
+        val botonQr = buttonQR
 
         botonGuardar.setOnClickListener {
-            var servicioId = UUID.randomUUID().toString()
-            var tituloServicio = txtTituloServicio.text.toString()
-            var dueño = txtDueñoServicio.text.toString()
-            var descripcion = txtDescripcionServicio.text.toString()
-            var calificacion = "5.0"
-            var validation = false
+            val servicioId = UUID.randomUUID().toString()
+            val tituloServicio = txtUsuarioRegistro.text.toString()
+            val dueño = txtDueñoServicio.text.toString()
+            val descripcion = txtDescripcionServicio.text.toString()
+            val calificacion = "5.0"
+            var validation = true
 
             if (tituloServicio == ""){
-                txtTituloServicio.error = "Campo Requerido";
+                txtUsuarioRegistro.error = "Campo Requerido";
+                validation = false
             }
             if (dueño == ""){
                 txtDueñoServicio.error = "Campo Requerido";
@@ -48,7 +49,7 @@ class ServiciosActivity : AppCompatActivity() {
                 txtDescripcionServicio.error = "Campo Requerido";
                 validation = false
             }
-            if (validation) {
+            if (validation === true) {
                 val servicio = Servicios(servicioId,tituloServicio, dueño, descripcion, calificacion)
                 db.collection("Servicios").add(servicio).addOnSuccessListener {
                     Log.d(TAG, "DocumentSnapshot added with ID: ${it.id}")
